@@ -7,7 +7,7 @@
         "--rm",
         "-e", "OLLAMA_HOST=${OLLAMA_HOST}",
         "-p", "11434:11434",
-        "yourusername/mcp-ollama:latest"
+        "kuhnst-akros-ch/windsurf-ollama-integration:mcp-ollama"
       ]
     }
   }
