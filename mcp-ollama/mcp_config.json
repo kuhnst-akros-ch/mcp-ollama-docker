@@ -1,11 +1,14 @@
 {
   "mcpServers": {
     "ollama": {
-      "command": "/mnt/data/development/akros/windsurf-marvin/mcp-ollama/.venv/bin/python3",
-      "args": ["-m", "mcp_ollama.server"],
-      "env": {
-        "OLLAMA_HOST": "http://marvin.akros.ch:11434"
-      }
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-e", "OLLAMA_HOST=${OLLAMA_HOST}",
+        "-p", "11434:11434",
+        "yourusername/mcp-ollama:latest"
+      ]
     }
   }
 }
