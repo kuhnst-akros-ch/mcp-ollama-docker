@@ -4,10 +4,11 @@
       "command": "docker",
       "args": [
         "run",
+        "-d",
         "--rm",
-        "-e", "OLLAMA_HOST=${OLLAMA_HOST}",
+        "-e", "OLLAMA_HOST=http://$(getent ahosts marvin.akros.ch | cut -d' ' -f1 | head -n1):11434",
         "-p", "11434:11434",
-        "kuhnst-akros-ch/windsurf-ollama-integration:mcp-ollama"
+        "stefankuhnakros/windsurf-ollama-integration:mcp-ollama"
       ]
     }
   }
