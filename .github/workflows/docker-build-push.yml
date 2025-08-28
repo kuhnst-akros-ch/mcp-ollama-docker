@@ -27,4 +27,4 @@ jobs:
           context: .
           file: ./mcp-ollama/Dockerfile
           push: true
-          tags: kuhnst-akros-ch/windsurf-ollama-integration:mcp-ollama
+          tags: stefankuhnakros/windsurf-ollama-integration:mcp-ollama
