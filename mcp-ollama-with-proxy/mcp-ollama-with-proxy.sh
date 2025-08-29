@@ -10,9 +10,7 @@ MCP_NAME="mcp-ollama"
 created_proxy=0
 
 cleanup() {
-  if [[ "$created_proxy" -eq 1 ]]; then
-    docker rm -f "$PROXY_NAME" >/dev/null 2>&1 || true
-  fi
+  docker rm -f "$PROXY_NAME" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT INT TERM
 
