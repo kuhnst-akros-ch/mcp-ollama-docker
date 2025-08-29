@@ -3,6 +3,8 @@ name: Build and Push Docker Image Tag 'mcp-ollama'
 on:
   push:
     branches: [main]
+    paths:
+      - docker-images/mcp-ollama/**
   workflow_dispatch:
 
 jobs:
