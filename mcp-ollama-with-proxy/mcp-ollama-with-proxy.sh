@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Somehow this helps to shut down the proxy when Windsurf exits
+exec > >(tee -a /dev/null) 2>&1
+
 # Resolve docker binary explicitly
 DOCKER_BIN="$(command -v docker || true)"
 if [[ -z "$DOCKER_BIN" ]]; then
@@ -47,7 +50,7 @@ echo "proxy started. container list:"
 "$DOCKER_BIN" ps --format 'table {{.Names}}\t{{.Status}}\t{{.Image}}'
 
 # Follow proxy logs in background (non-fatal if it exits)
-("$DOCKER_BIN" logs -f "$PROXY_NAME" >/dev/null 2>&1 & ) || true
+#("$DOCKER_BIN" logs -f "$PROXY_NAME" >/dev/null 2>&1 & ) || true
 
 echo "starting MCP container (attached to stdio)…"
 "$DOCKER_BIN" run -i --rm \
