@@ -1,8 +1,8 @@
 {
   "mcpServers": {
     "ollama-stack": {
-      "command": "/home/kuhnst/.codeium/windsurf/mcp-ollama-with-proxy.sh",
-      "args": []
+      "command": "bash",
+      "args": ["-lc", "~/.codeium/windsurf/mcp-ollama-with-proxy.sh"]
     }
   }
 }
