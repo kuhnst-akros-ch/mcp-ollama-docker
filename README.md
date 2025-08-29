@@ -9,8 +9,10 @@ Several ways to run Ollama as an MCP server in Windsurf.
 Windsurf is the main orchestrator ("the brain").  
 Most tasks are handled by Windsurf; only a few are sent to Ollama.
 
-- Option A: Direct integration
-- Option B: Integration with a proxy (see what is sent to Ollama)
+- [Option A: Basic MCP Server](#option-a-basic-mcp-server)
+- [Option B: Basic MCP Server with Proxy](#option-b-basic-mcp-server-with-proxy)  
+  See what is sent to Ollama 📡 
+- [Option C: Coming Soon](#option-c-coming-soon)
 
 ## Setup Instructions
 
@@ -20,6 +22,8 @@ Most tasks are handled by Windsurf; only a few are sent to Ollama.
 2. Start Windsurf
 
 ### Option B: Basic MCP Server with Proxy
+
+This lets you see what is sent to Ollama.
 
 1. Copy `mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh` to `~/.codeium/windsurf/`
 2. Copy `mcp-ollama-with-proxy/mcp_config.json` to `~/.codeium/windsurf/`
