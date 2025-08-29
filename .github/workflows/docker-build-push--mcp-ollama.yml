@@ -25,6 +25,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./mcp-ollama
-          file: Dockerfile
+          file: ./mcp-ollama/Dockerfile
           push: true
           tags: stefankuhnakros/windsurf-ollama-integration:mcp-ollama
