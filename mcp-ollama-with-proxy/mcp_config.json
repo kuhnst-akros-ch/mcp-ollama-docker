@@ -2,7 +2,10 @@
   "mcpServers": {
     "ollama-stack": {
       "command": "bash",
-      "args": ["-lc", "~/.codeium/windsurf/mcp-ollama-with-proxy.sh"]
+      "args": [
+        "-lc",
+        "~/.codeium/windsurf/mcp-ollama-with-proxy.sh --ollama-host http://10.7.2.100:11434 --proxy-password CHANGE_ME"
+      ]
     }
   }
 }

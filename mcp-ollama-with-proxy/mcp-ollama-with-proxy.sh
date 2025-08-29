@@ -1,6 +1,22 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --ollama-host)
+      OLLAMA_HOST="$2"
+      shift 2
+      ;;
+    --proxy-password)
+      PROXY_PASSWORD="$2"
+      shift 2
+      ;;
+    *)
+      exit 99
+      ;;
+  esac
+done
+
 MCP_NAME=mcp-ollama
 PROXY_NAME=mcp-ollama-proxy
 
@@ -17,11 +33,11 @@ docker run -d --rm \
   --network host \
   mitmproxy/mitmproxy:latest \
   mitmweb \
-    --mode reverse:http://10.7.2.100:11434 \
+    --mode "reverse:${OLLAMA_HOST}" \
     --listen-port 11434 \
     --web-host 0.0.0.0 \
     --web-port 11435 \
-    --set web_password=todo_change_me
+    --set "web_password=${PROXY_PASSWORD}"
 
 docker run -i --rm \
   --name "$MCP_NAME" \
