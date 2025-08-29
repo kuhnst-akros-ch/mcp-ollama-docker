@@ -6,6 +6,7 @@
         "run",
         "-i",
         "--rm",
+        "--name", "mcp-ollama",
         "-e", "OLLAMA_HOST=http://10.7.2.100:11434",
         "-p", "11434:11434",
         "--network", "host",
