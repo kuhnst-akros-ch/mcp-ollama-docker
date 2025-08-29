@@ -1,33 +1,8 @@
 {
   "mcpServers": {
-    "ollama-proxy": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-d",
-        "--rm",
-        "--name", "mcp-ollama-proxy",
-        "--network", "host",
-        "mitmproxy/mitmproxy:latest",
-        "mitmweb",
-          "--mode", "reverse:http://10.7.2.100:11434",
-          "--listen-port", "11434",
-          "--web-host", "0.0.0.0",
-          "--web-port", "11435",
-          "--set", "web_password=todo_change_me"
-      ]
-    },
-    "ollama": {
-      "command": "docker",
-      "args": [
-        "run",
-        "-i",
-        "--rm",
-        "--name", "mcp-ollama",
-        "--add-host", "host.docker.internal:host-gateway",
-        "-e", "OLLAMA_HOST=http://host.docker.internal:11434",
-        "stefankuhnakros/windsurf-ollama-integration:mcp-ollama"
-      ]
+    "ollama-stack": {
+      "command": "/home/kuhnst/.codeium/windsurf/mcp-ollama-with-proxy.sh",
+      "args": []
     }
   }
 }
