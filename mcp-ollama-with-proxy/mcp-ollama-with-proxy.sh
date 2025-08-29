@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-LOG="/home/kuhnst/.codeium/windsurf/mcp.log"
-exec > >(tee -a "$LOG") 2>&1
-echo "=== $(date -Is) :: start mcp-ollama-with-proxy.sh ==="
-
-echo "whoami: $(whoami)"
-echo "id: $(id)"
-echo "groups: $(groups || true)"
-echo "PATH: $PATH"
-echo "which docker: $(command -v docker || echo 'not found')"
-echo "docker.sock perms: $(ls -l /var/run/docker.sock || true)"
-
 # Resolve docker binary explicitly
 DOCKER_BIN="$(command -v docker || true)"
 if [[ -z "$DOCKER_BIN" ]]; then
