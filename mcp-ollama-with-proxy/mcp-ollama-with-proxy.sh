@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-# Somehow this helps to shut down the proxy when Windsurf exits
-exec > >(tee -a /dev/null) 2>&1
-
 PROXY_NAME="mcp-ollama-proxy"
 MCP_NAME="mcp-ollama"
 created_proxy=0
@@ -12,7 +9,8 @@ created_proxy=0
 cleanup() {
   docker rm -f "$PROXY_NAME" >/dev/null 2>&1 || true
 }
-trap cleanup EXIT INT TERM
+
+trap cleanup EXIT INT TERM HUP QUIT ERR
 
 if [[ "$created_proxy" -ne 1 ]]; then
   docker run -d --rm \
@@ -33,6 +31,3 @@ docker run -i --rm \
   --add-host host.docker.internal:host-gateway \
   -e OLLAMA_HOST="http://host.docker.internal:11434" \
   stefankuhnakros/windsurf-ollama-integration:mcp-ollama
-status=$?
-
-exit $status
