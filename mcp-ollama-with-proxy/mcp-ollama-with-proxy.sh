@@ -11,6 +11,14 @@ while [[ $# -gt 0 ]]; do
       PROXY_PASSWORD="$2"
       shift 2
       ;;
+    --proxy-listen-port)
+      PROXY_LISTEN_PORT="$2"
+      shift 2
+      ;;
+    --proxy-web-port)
+      PROXY_WEB_PORT="$2"
+      shift 2
+      ;;
     *)
       exit 99
       ;;
@@ -34,9 +42,9 @@ docker run -d --rm \
   mitmproxy/mitmproxy:latest \
   mitmweb \
     --mode "reverse:${OLLAMA_HOST}" \
-    --listen-port 11434 \
+    --listen-port $PROXY_LISTEN_PORT \
     --web-host 0.0.0.0 \
-    --web-port 11435 \
+    --web-port $PROXY_WEB_PORT \
     --set "web_password=${PROXY_PASSWORD}"
 
 docker run -i --rm \
