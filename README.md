@@ -6,11 +6,10 @@ This project provides several setup options for running Ollama as an MCP server 
 
 ### Ollama as "Basic MCP server"
 
-Windsurf is still the brain and sees Ollama as a tool.<br/>
-Thus few tasks are delegated to Ollama and Windsurf handles most by itself.
-
-Use "Option A" below.<br/>
-Use Option B to see what is actually sent to Ollama.
+Windsurf is the main orchestrator ("the brain").<br/>
+It handles most tasks and only delegates a few to Ollama as a specialized tool.
+- Option A
+- Option B: with a proxy to see what is actually sent to Ollama.
 
 ## Setup Options
 
