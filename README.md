@@ -11,7 +11,10 @@ Most tasks are handled by Windsurf; only a few are sent to Ollama.
 
 - [Option A: Basic MCP Server](#option-a-basic-mcp-server)
 - [Option B: Basic MCP Server with Proxy](#option-b-basic-mcp-server-with-proxy)  
-  See what is sent to Ollama 📡 
+  See what is sent to Ollama 📡
+
+### Ollama as Windsurf Brain
+
 - [Option C: Coming Soon](#option-c-coming-soon)
 
 ## Setup Instructions
@@ -46,3 +49,7 @@ This lets you see what is sent to Ollama.
 ### Option C: Coming Soon
 
 More configurations will be added.
+
+## Notes
+
+All provided Docker images were built in a GitHub pipeline.
