@@ -18,15 +18,24 @@ Most tasks are handled by Windsurf; only a few are sent to Ollama.
 
 ### Option A: Basic MCP Server
 
-1. Copy `mcp-ollama/mcp_config.json` to `~/.codeium/windsurf/`
+1. Copy `mcp-ollama/mcp_config.json` to `~/.codeium/windsurf/`  
+  ```shell
+  cp mcp-ollama/mcp_config.json ~/.codeium/windsurf/
+  ````
 2. Start Windsurf
 
 ### Option B: Basic MCP Server with Proxy
 
 This lets you see what is sent to Ollama.
 
-1. Copy `mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh` to `~/.codeium/windsurf/`
+1. Copy `mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh` to `~/.codeium/windsurf/`  
+  ```shell
+  cp mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh ~/.codeium/windsurf/
+  ````
 2. Copy `mcp-ollama-with-proxy/mcp_config.json` to `~/.codeium/windsurf/`
+  ```shell
+  cp mcp-ollama-with-proxy/mcp_config.json ~/.codeium/windsurf/
+  ````
 3. Start Windsurf
 4. Wait for Docker containers: `ollama-server` and `ollama-proxy`
 5. Go to [http://localhost:11435](http://localhost:11435)  
