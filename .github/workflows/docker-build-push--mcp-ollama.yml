@@ -25,6 +25,5 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ./docker-images/mcp-ollama
-          file: ./docker-images/mcp-ollama/Dockerfile
           push: true
           tags: stefankuhnakros/mcp-ollama-docker:mcp-ollama
