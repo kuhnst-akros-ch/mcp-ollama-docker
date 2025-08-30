@@ -3,7 +3,7 @@ FROM python:3-alpine
 WORKDIR /app
 
 RUN pip install --no-cache-dir mcp-ollama \
-    && adduser -D -u 10001 appuser \
+    && adduser -D -u 10001 appuser
 
 USER appuser
 
