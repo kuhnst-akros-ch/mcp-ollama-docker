@@ -1,55 +1,26 @@
-# mcp-ollama-docker
+# MCP-Ollama Server for IDEs
 
-Several ways to run Ollama as an MCP server in Windsurf.
+MCP server configuration for IDEs to connect to Ollama instances. Pre-configured for Akros' Marvin server by default.
 
-## Setups
+## Quick Start
 
-### Ollama as Basic MCP Server
+### Standard Setup
+```bash
+cp mcp-ollama/mcp_config.json ~/.codeium/windsurf/
+# Edit ~/.codeium/windsurf/mcp_config.json if needed
+```
 
-Windsurf is the main orchestrator ("the brain").  
-Most tasks are handled by Windsurf; only a few are sent to Ollama.
+### With Proxy (Recommended)
+See exactly how your IDE uses the Ollama models. Great for optimizing model usage and understanding what's happening under the hood:
+```bash
+cp mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh ~/.codeium/windsurf/
+cp mcp-ollama-with-proxy/mcp_config.json ~/.codeium/windsurf/
+# Access proxy at http://localhost:11435 (password in config)
+```
 
-- [Option A: Basic MCP Server](#option-a-basic-mcp-server)
-- [Option B: Basic MCP Server with Proxy](#option-b-basic-mcp-server-with-proxy)  
-  See what is sent to Ollama 📡
+## Configuration
 
-### Ollama as Windsurf Brain
-
-- [Option C: Coming Soon](#option-c-coming-soon)
-
-## Setup Instructions
-
-### Option A: Basic MCP Server
-
-1. Copy `mcp-ollama/mcp_config.json` to `~/.codeium/windsurf/`  
-  ```shell
-  cp mcp-ollama/mcp_config.json ~/.codeium/windsurf/
-  ````
-2. Start Windsurf
-
-### Option B: Basic MCP Server with Proxy
-
-This lets you see what is sent to Ollama.
-
-1. Copy `mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh` to `~/.codeium/windsurf/`  
-  ```shell
-  cp mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh ~/.codeium/windsurf/
-  ````
-2. Copy `mcp-ollama-with-proxy/mcp_config.json` to `~/.codeium/windsurf/`
-  ```shell
-  cp mcp-ollama-with-proxy/mcp_config.json ~/.codeium/windsurf/
-  ````
-3. Start Windsurf
-4. Wait for Docker containers: `ollama-server` and `ollama-proxy`
-5. Go to [http://localhost:11435](http://localhost:11435)  
-   Use the password from the JSON file (`CHANGE_ME` by default)
-
-> **Important:** Change the password in the JSON file!
-
-### Option C: Coming Soon
-
-More configurations will be added.
-
-## Notes
-
-All provided Docker images were built in a GitHub pipeline.
+Edit `mcp_config.json` to customize:
+- `OLLAMA_HOST`: Points to your Ollama server (default: Akros' Marvin)
+- Web interface port: 11435 (change if needed)
+- Default password: `CHANGE_ME` (seriously, change this!)
