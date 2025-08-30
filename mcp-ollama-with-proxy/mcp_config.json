@@ -4,7 +4,7 @@
       "command": "bash",
       "args": [
         "-lc",
-        "~/.codeium/windsurf/mcp-ollama-with-proxy.sh --ollama-host http://10.7.2.100:11434 --proxy-password CHANGE_ME --proxy-listen-port 11434 --proxy-web-port 11435"
+        "~/.codeium/windsurf/mcp-ollama-with-proxy.sh --ollama-host http://10.7.2.100:11434 --proxy-password CHANGE_ME --proxy-listen-port 11435 --proxy-web-port 11436"
       ]
     }
   }
