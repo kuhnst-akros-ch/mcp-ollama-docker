@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - .github/workflows/**
       - Dockerfile
   workflow_dispatch:
 
