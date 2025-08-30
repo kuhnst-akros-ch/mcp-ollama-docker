@@ -4,7 +4,10 @@ MCP server configuration for IDEs to connect to Ollama instances. Pre-configured
 
 ## Quick Start
 
+> **Note for first-time setup:** The Docker image will be downloaded automatically when you first start the service. This may take a few minutes depending on your internet connection.
+
 ### Standard Setup
+Just one config file is all you need to use Ollama as an MCP server:
 ```bash
 cp mcp-ollama/mcp_config.json ~/.codeium/windsurf/
 # Edit ~/.codeium/windsurf/mcp_config.json if needed
