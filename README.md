@@ -1,4 +1,4 @@
-# windsurf-ollama-integration
+# mcp-ollama-docker
 
 Several ways to run Ollama as an MCP server in Windsurf.
 

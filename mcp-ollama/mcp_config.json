@@ -9,7 +9,7 @@
         "--name", "mcp-ollama",
         "-e", "OLLAMA_HOST=http://10.7.2.100:11434",
         "--network", "host",
-        "stefankuhnakros/windsurf-ollama-integration:mcp-ollama"
+        "stefankuhnakros/mcp-ollama-docker:mcp-ollama"
       ]
     }
   }
