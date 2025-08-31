@@ -1,4 +1,4 @@
-# MCP-Ollama Server for IDEs
+# Ollama as MC Server in Windsurf
 
 MCP server configuration for IDEs to connect to Ollama instances. Pre-configured for Akros' Marvin server by default.
 
