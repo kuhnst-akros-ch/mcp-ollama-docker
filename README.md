@@ -13,17 +13,23 @@ MCP server configuration for IDEs to connect to Ollama instances. Pre-configured
 ### Standard Setup
 Just one config file is all you need to use Ollama as an MCP server:
 ```bash
-cp mcp-ollama/mcp_config.json ~/.codeium/windsurf/
-# Edit ~/.codeium/windsurf/mcp_config.json if needed
+mkdir -p ~/.codeium/windsurf
+curl -L -o ~/.codeium/windsurf/mcp_config.json \
+  https://raw.githubusercontent.com/kuhnst-akros-ch/mcp-ollama-docker/refs/heads/main/mcp-ollama/mcp_config.json
 ```
 
 ### With Proxy (Recommended)
 See exactly how your IDE uses the Ollama models. Great for optimizing model usage and understanding what's happening under the hood:
 ```bash
-cp mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh ~/.codeium/windsurf/
-cp mcp-ollama-with-proxy/mcp_config.json ~/.codeium/windsurf/
-# Access proxy at http://localhost:11436 (password in config)
+mkdir -p ~/.codeium/windsurf
+curl -L -o ~/.codeium/windsurf/mcp_config.json \
+  https://raw.githubusercontent.com/kuhnst-akros-ch/mcp-ollama-docker/refs/heads/main/mcp-ollama-with-proxy/mcp_config.json
+
+curl -L -o ~/.codeium/windsurf/mcp_config.json \
+  https://raw.githubusercontent.com/kuhnst-akros-ch/mcp-ollama-docker/refs/heads/main/mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh
+chmod +x ~/.codeium/windsurf/mcp-ollama-with-proxy.sh
 ```
+Access proxy at http://localhost:11436 (password in the json, default=CHANGE_ME)
 
 > **For Windows:**<br/>
 > If `bash` is inside WSL, then replace this in the json:<br/>
