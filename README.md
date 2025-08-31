@@ -25,7 +25,7 @@ mkdir -p ~/.codeium/windsurf
 curl -L -o ~/.codeium/windsurf/mcp_config.json \
   https://raw.githubusercontent.com/kuhnst-akros-ch/mcp-ollama-docker/refs/heads/main/mcp-ollama-with-proxy/mcp_config.json
 
-curl -L -o ~/.codeium/windsurf/mcp_config.json \
+curl -L -o ~/.codeium/windsurf/mcp-ollama-with-proxy.sh \
   https://raw.githubusercontent.com/kuhnst-akros-ch/mcp-ollama-docker/refs/heads/main/mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh
 chmod +x ~/.codeium/windsurf/mcp-ollama-with-proxy.sh
 ```
