@@ -2,6 +2,10 @@
 
 MCP server configuration for IDEs to connect to Ollama instances. Pre-configured for Akros' Marvin server by default.
 
+## Requirements
+- Docker installed and running
+- Ollama server (local or remote)
+
 ## Quick Start
 
 > **Note for first-time setup:** The Docker image will be downloaded automatically when you first start the service. This may take a few minutes depending on your internet connection.
@@ -18,12 +22,17 @@ See exactly how your IDE uses the Ollama models. Great for optimizing model usag
 ```bash
 cp mcp-ollama-with-proxy/mcp-ollama-with-proxy.sh ~/.codeium/windsurf/
 cp mcp-ollama-with-proxy/mcp_config.json ~/.codeium/windsurf/
-# Access proxy at http://localhost:11435 (password in config)
+# Access proxy at http://localhost:11436 (password in config)
 ```
+
+> **For Windows:**<br/>
+> If `bash` is inside WSL, then replace this in the json:<br/>
+> `"~/.codeium/windsurf/` -> `"/mnt/c/Users/USERNAME/.codeium/windsurf/`<br/>
+> and use your username for `USERNAME`.
 
 ## Configuration
 
 Edit `mcp_config.json` to customize:
 - `OLLAMA_HOST`: Points to your Ollama server (default: Akros' Marvin)
-- Web interface port: 11435 (change if needed)
+- Web interface port: 11436 (change if needed)
 - Default password: `CHANGE_ME` (seriously, change this!)
