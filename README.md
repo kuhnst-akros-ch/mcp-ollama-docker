@@ -19,7 +19,7 @@ curl -L -o ~/.codeium/windsurf/mcp_config.json \
   https://raw.githubusercontent.com/kuhnst-akros-ch/mcp-ollama-docker/refs/heads/main/mcp-ollama/mcp_config.json
 ```
 
-### With Proxy (Recommended)
+### With Proxy
 See exactly how your IDE uses the Ollama models. Great for optimizing model usage and understanding what's happening under the hood:
 ```bash
 mkdir -p ~/.codeium/windsurf
