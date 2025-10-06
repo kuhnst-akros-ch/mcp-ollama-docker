@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir mcp-ollama \
 USER appuser
 
 # Set the command to run the MCP server with stdio transport
-CMD ["python", "-m", "mcp_ollama.server"]
+CMD ["python", "-m", "mcp_ollama"]
