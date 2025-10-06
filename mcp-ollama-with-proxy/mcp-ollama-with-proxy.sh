@@ -51,4 +51,4 @@ docker run -i --rm \
   --name "$MCP_NAME" \
   --add-host host.docker.internal:host-gateway \
   -e OLLAMA_HOST=http://host.docker.internal:$PROXY_LISTEN_PORT \
-  stefankuhnakros/mcp-ollama-docker:mcp-ollama
+  wuodan/mcp-ollama:latest
